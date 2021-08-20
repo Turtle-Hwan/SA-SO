@@ -1,23 +1,54 @@
+import { createRequire } from 'module';
 import React from 'react';
-import { Button, ScrollView, Text, View } from 'react-native';
+import { Button, ScrollView, Text, View , StyleSheet} from 'react-native';
 
 import Detail from './detail/Detail';
 
 export default function Todo() {
   return (
-    <View>
-      <View>
-        <Text>계획 게시판</Text>
-        <Text>8월 21일</Text>
+    <View style={styles.container}>
+      <View style={styles.titleConatiner}>
+        <Text style={styles.titleText}>계획 게시판</Text>
+      </View>
+      <View style={styles.dayContainer}>
+        <Text style={styles.dayText}>8월 21일</Text>
       </View>
       <ScrollView>
-        <Detail/>
-        <Detail/>
-        <Detail/>
-        <Detail/>
-        <Detail/>
-        <Detail/>
+        <Detail name="자연적인새 93445" Todo="아침 5분 스트레칭" />
+        <Detail name="자연적인곰 94745" Todo="강아지 산책시키기"/>
+        <Detail name="자유로운펭귄 345436" Todo="매일 3km 런닝"/>
+        <Detail name="깨끗한물고기 35521" Todo="매일 물 2잔 마시기"/>
+        <Detail name="자유로운펭귄 313086" Todo="먹고나서 바로 설거지하기"/>
+        <Detail name="자연적인새 9531" Todo="주 1회 등산하기"/>
+        <View style={styles.dummyView}></View>
       </ScrollView>
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container:{
+    backgroundColor: '#f0f0f0',
+    // alignItems : 'center',
+    // height: '100%'
+  },
+  containerWidth:{
+    width : '90%',
+  },
+  titleConatiner: {
+    backgroundColor: '#ffffff',
+    height: 60,
+    justifyContent: 'center',
+    alignItems : 'center',
+  },
+  titleText: {
+    fontSize: 22,
+    fontWeight: 'bold',
+  },
+  dayContainer:{
+    alignItems : 'center',
+  },
+  dummyView:{
+    height:80,
+  }
+});

@@ -1,17 +1,18 @@
+import { createRequire } from 'module';
 import React from 'react';
 import { Text, View, StyleSheet,Image } from 'react-native';
 
-export default function Detail() {
+export default function Detail(p) {
   return (
     <View style={styles.container}>
       <View style={styles.iconContainer}>
-        <Image source={require('../../../assets/image/icon/profile_icon.png')} style={styles.iconImage} />
+        <Image source={require(`../../../assets/image/icon/profile_icon.png`)} style={styles.iconImage} />
       </View>
 
       <View style={styles.listContainer}>
         <View style={styles.textContainer}>
-          <Text style={styles.textTitle}>걸어서 출근하기</Text>
-          <Text style={styles.textUserName}>유저이름</Text>
+          <Text style={styles.textTitle}>{p.Todo}</Text>
+          <Text style={styles.textUserName}>{p.name}</Text>
         </View>
         {/* <View style={styles.batteryContainer}>
           <View style={[styles.battery,styles.batteryOne]}></View>
@@ -31,8 +32,9 @@ const styles = StyleSheet.create({
   container :{
     flexDirection : 'row',
     height : 120,
-    backgroundColor : '#f0f0f0',
-    marginBottom:20,
+    backgroundColor: '#ffffff',
+    marginBottom:1,
+    
   },
   iconContainer:{
     flex: 2,
