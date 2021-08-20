@@ -21,7 +21,7 @@ export default function TabNav() {
           tabBarActiveTintColor: '#FF9A9A',
         }}
         >
-        <Tab.Screen name="Post" component={Todo} options={{headerShown: false}}/>
+        <Tab.Screen name="Todo" component={Todo} options={{headerShown: false}}/>
         <Tab.Screen name="Home" component={Home} options={{headerShown: false}}/>
         <Tab.Screen name="Me" component={Profile} options={{headerShown: false}} />
       </Tab.Navigator>
