@@ -6,7 +6,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Splash from './Splash/Splash';
 
 import Home from './Home/Home';
-import Todo from './Todo/Todo';
+import Todo from './Social/Social';
 import Profile from './Profile/Profile';
 
 const Tab = createBottomTabNavigator();
