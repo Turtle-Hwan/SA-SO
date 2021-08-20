@@ -133,7 +133,6 @@ const styles = StyleSheet.create({
     },
     calendarContainer: {
         paddingHorizontal: 28,
-        marginTop: 60,
     },
     toDoContainer: {
         backgroundColor: '#FFEBEB',

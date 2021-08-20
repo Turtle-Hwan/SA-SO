@@ -10,17 +10,20 @@ const Tab = createMaterialTopTabNavigator();
 const CalenderTab = () => {
   return (
     <Tab.Navigator initialRouteName="MonthCalender"
-      style={{backgroundColor: '#ffffff'}}
+      style={{backgroundColor: '#ffffff', }}
     screenOptions={{
       tabBarActiveTintColor: '#000000',
       tabBarInactiveTintColor: '#B4B4B4',
-      tabBarLabelStyle: { fontSize: 12 },
-      // tabBarStyle: { backgroundColor: 'powderblue' },
-      tabBarIndicatorStyle: {borderBottomColor:'#FFBDBD', borderBottomWidth: 50,borderRadius: 4},
+      tabBarLabelStyle: { fontSize: 12, fontWeight: 'bold' },
+      tabBarIndicatorStyle: {borderBottomColor:'#FFBDBD', borderBottomWidth: 30,borderRadius: 4},
       tabBarStyle: {
-        marginHorizontal: 150,
-        width: 100,
-        backgroundColor: '#ffffff'
+        marginHorizontal: '42.5%',
+        width: 70,
+        height: 40, 
+        backgroundColor: '#ffffff',
+        shadowColor: "#ffffff",
+        marginTop: 14,
+        marginBottom: 22,
       }
   }}>
   <Tab.Screen name="월" component={MonthCalendar} />
