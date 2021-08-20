@@ -1,6 +1,8 @@
 import React from 'react';
 import { Text, View, StyleSheet,Image } from 'react-native';
 
+import ToggleSwitch from 'toggle-switch-react-native'
+
 export default function Profile() {
   return (
     <View style={styles.container}>
@@ -27,7 +29,14 @@ export default function Profile() {
         <View style={styles.detailList}>
           <View style={[styles.containerWidth, styles.listTextContainer]}>
             <Text style={styles.listText}>알림 설정</Text>
-            <Image source={require('../../assets/image/icon/icon_right_arrow.png')} style={styles.iconArrow} />
+            <ToggleSwitch
+              isOn={false}
+              onColor="#007AFF"
+              offColor="#C4C4C4"
+              // labelStyle={{ color: "black", fontWeight: "900" }}
+              size="small"
+              onToggle={isOn => console.log("changed to : ", isOn)}
+            />
           </View>
         </View>
         <View style={styles.detailList}>
@@ -51,6 +60,7 @@ export default function Profile() {
         <View style={styles.detailList}>
           <View style={[styles.containerWidth, styles.listTextContainer]}>
             <Text style={styles.listText}>버전정보</Text>
+            <Text style={styles.versionText}>0.1.0</Text>
           </View>
         </View>
         <View style={styles.detailList}>
@@ -130,5 +140,9 @@ const styles = StyleSheet.create({
   iconArrow:{
     width : 7,
     height: 10,
+  },
+  versionText:{
+    fontSize : 14,
+    fontWeight: 'bold'
   }
 })
