@@ -7,11 +7,13 @@ export default function Detail() {
       <View style={styles.iconContainer}>
         <Image source={require('../../../assets/image/icon/profile_icon.png')} style={styles.iconImage} />
       </View>
+
       <View style={styles.listContainer}>
         <View style={styles.textContainer}>
           <Text style={styles.textTitle}>걸어서 출근하기</Text>
+          <Text style={styles.textUserName}>유저이름</Text>
         </View>
-        <View style={styles.batteryContainer}>
+        {/* <View style={styles.batteryContainer}>
           <View style={[styles.battery,styles.batteryOne]}></View>
           <View style={[styles.battery,styles.batteryTwo]}></View>
           <View style={[styles.battery,styles.batteryThree]}></View>
@@ -19,7 +21,7 @@ export default function Detail() {
           <View style={[styles.battery,styles.batteryFive]}></View>
           <View style={[styles.battery,styles.batterySix]}></View>
           <View style={[styles.battery,styles.batterySeven]}></View>
-        </View>
+        </View> */}
       </View>
     </View>
   )
@@ -29,12 +31,14 @@ const styles = StyleSheet.create({
   container :{
     flexDirection : 'row',
     height : 120,
-    backgroundColor : '#f0f0f0'
+    backgroundColor : '#f0f0f0',
+    marginBottom:20,
   },
   iconContainer:{
     flex: 2,
     alignItems : 'center',
-    justifyContent : 'center'
+    justifyContent : 'center',
+    
   },
   iconImage:{
     width : 60,
@@ -44,6 +48,9 @@ const styles = StyleSheet.create({
     flex: 5,
     justifyContent: 'center',
     paddingLeft : 20,
+  },
+  textUserName:{
+    paddingTop : 7,
   },
   textContainer:{
 
