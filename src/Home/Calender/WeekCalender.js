@@ -8,6 +8,7 @@ import DayDiary from './DayDiary';
 export default function WeekCalender() {
   const [dateSelect, setDateSelect] = useState()
 
+
   return (
     <ScrollView style={styles.container}>
       <View style={styles.dayContainer}>
@@ -19,18 +20,19 @@ export default function WeekCalender() {
         <Text style={styles.dayText}>토</Text>
         <Text style={styles.dayText}>일</Text>
       </View>
+
       <CalendarStrip
                     showMonth={false}
                     showDayName={false}
                     calendarAnimation={{type: 'sequence', duration: 30}}
-                    // daySelectionAnimation={{type: 'background', duration: 200, highlightColor: '#ffffff'}}
-                    style={{width:'100%',height: 50, paddingBottom: 10, paddingHorizontal : 12}}
+                    daySelectionAnimation={{type: 'background', duration: 200}}
+                    style={{width:'100%',height: 50, paddingBottom: 10, paddingHorizontal : 12, zIndex : 5}}
                     calendarHeaderStyle={{color: 'white'}}
-                    calendarColor={'white'}
-                    dateNumberStyle={{color: '#555555'}}
+                    calendarColor={'transparent'}
+                    dateNumberStyle={{color: '#555555', fontSize : 14, fontFamily : 'NotoSansKR-Regular'}}
                     dateNameStyle={{color: '#555555'}}
-                    highlightDateNumberStyle={{color: '#FFBDBD'}}
-                    highlightDateNameStyle={{color: '#FFBDBD'}}
+                    highlightDateNumberStyle={{color: '#555555', fontSize : 14, fontFamily : 'NotoSansKR-Regular'}}
+                    highlightDateNameStyle={{color: '#555555'}}
                     disabledDateNameStyle={{color: '#555555'}}
                     disabledDateNumberStyle={{color: '#555555'}}
                     // datesWhitelist={datesWhitelist}
@@ -43,7 +45,24 @@ export default function WeekCalender() {
                     customDatesStyles= {['월', '화', '수', '목', '금', '토', '일']} 
                     onDateSelected={ date => setDateSelect(date.format('MM-DD-YYYY').substr(3,2)) }
                 />
-      <HomeMission/>
+            
+      <View style={styles.roundConatiner}>
+        <View style={styles.round1}></View>
+        <View style={styles.round2}></View>
+        <View style={styles.round3}></View>
+      </View>
+
+      <View style={styles.boxContainer}>
+        <View style={(dateSelect==16) ? styles.boxSelected : styles.box}></View>
+        <View style={(dateSelect==17) ? styles.boxSelected : styles.box}></View>
+        <View style={(dateSelect==18) ? styles.boxSelected : styles.box}></View>
+        <View style={(dateSelect==19) ? styles.boxSelected : styles.box}></View>
+        <View style={(dateSelect==20) ? styles.boxSelected : styles.box}></View>
+        <View style={(dateSelect==21) ? styles.boxSelected : styles.box}></View>
+        <View style={(dateSelect==22) ? styles.boxSelected : styles.box}></View>
+      </View>
+
+      <HomeMission props={dateSelect}/>
 
       <View style={styles.newChallenge}>
         <TouchableOpacity activeOpacity={0.4} style={styles.newChallengeButton}>
@@ -69,9 +88,68 @@ const styles = StyleSheet.create({
     justifyContent : 'space-between'
   },
   dayText : {
+    zIndex: 3,
     fontFamily : 'NotoSansKR-Regular',
     lineHeight : 20,
     fontSize : 15,
+  },
+  roundConatiner:{
+    zIndex : 1,
+    position: 'absolute',
+    top : 40,
+    left: 0,
+    right: 0,
+    width : '100%',
+    height : 40,
+    flexDirection : 'row',
+  },
+  round1:{
+    zIndex : 2,
+    width : 36,
+    height : 36,
+    borderRadius : 18,
+    backgroundColor : '#C5F6BD',
+    marginLeft : 20,
+    marginTop : 3,
+  },
+  round2:{
+    width : 36,
+    height : 36,
+    borderRadius : 18,
+    backgroundColor : '#FFED8C',
+    marginLeft : 17,
+    marginTop : 3,
+  },
+  round3:{
+    width : 36,
+    height : 36,
+    borderRadius : 18,
+    backgroundColor : '#FFED8C',
+    marginLeft : 17,
+    marginTop : 3,
+  },
+  boxContainer:{
+    zIndex : 0,
+    position: 'absolute',
+    top : 15,
+    left: 6,
+    right: 0,
+    width : '100%',
+    height : 75,
+    flexDirection : 'row',
+
+  },
+  box:{
+    width : 45,
+    height : 75,
+    backgroundColor : '#FFFFFF',
+    marginLeft: 8,
+  },
+  boxSelected:{
+    width : 45,
+    height : 75,
+    backgroundColor : '#FFF5F5',
+    marginLeft: 8,
   },
   newChallenge:{
     alignItems : 'center',
