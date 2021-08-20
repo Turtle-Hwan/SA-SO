@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Splash from './Splash/Splash';
 
-import Home from './Home';
+import Home from './Home/Home';
 import Todo from './Todo/Todo';
 import Profile from './Profile/Profile';
 
