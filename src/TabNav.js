@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import Splash from './Splash/Splash';
 
@@ -11,26 +12,18 @@ import Profile from './Profile/Profile';
 const Tab = createBottomTabNavigator();
 
 export default function TabNav() {
-  const [isLoading, setIsLoading] = useState(true)
 
-
-  useEffect(() => {
-    setTimeout(() => {setIsLoading(false)}, 1000)
-  }, []);
-
-  
-  if(isLoading){
-    return <Splash/>
-  }
   return (
-    <NavigationContainer>
       <Tab.Navigator
         initialRouteName="Home"
-        screenOptions={{headerShown: false}}>
-        <Tab.Screen name="Todo" component={Todo} />
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Me" component={Profile} />
+        screenOptions={{
+          tabBarInactiveTintColor: '#555555',
+          tabBarActiveTintColor: '#FF9A9A',
+        }}
+        >
+        <Tab.Screen name="Post" component={Todo} options={{headerShown: false}}/>
+        <Tab.Screen name="Home" component={Home} options={{headerShown: false}}/>
+        <Tab.Screen name="Me" component={Profile} options={{headerShown: false}} />
       </Tab.Navigator>
-    </NavigationContainer>
   );
 }
