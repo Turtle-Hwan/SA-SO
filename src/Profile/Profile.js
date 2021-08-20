@@ -32,7 +32,7 @@ export default function Profile() {
             <Text style={styles.listText}>알림 설정</Text>
             <ToggleSwitch
               isOn={toggle}
-              onColor="#0A84FF"
+              onColor="#FFD3D3"
               offColor="#C4C4C4"
               // labelStyle={{ color: "black", fontWeight: "900" }}
               size="small"

@@ -1,4 +1,4 @@
-import React , {useState}from 'react'
+import React , {useState, useEffect }from 'react'
 import {View, Text, StyleSheet, Image, TouchableOpacity, TextInput} from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
@@ -6,11 +6,20 @@ export default function NickName () {
   const navigation = useNavigation();
 
   const [text, onChangeText] = useState("");
+  const [okay, setOkay] = useState(true);
 
-  const [button1, setButton1] = useState("false");
-  const [button2, setButton2] = useState("false");
-  const [button3, setButton3] = useState("false");
-  const [button4, setButton4] = useState("false");
+  const [button1, setButton1] = useState(false);
+  const [button2, setButton2] = useState(false);
+  const [button3, setButton3] = useState(false);
+  const [button4, setButton4] = useState(false);
+
+  useEffect(() => {
+    if((button1 || button2 || button3 || button4) && (text.length > 0)){
+      setOkay(false)
+    } else {
+      setOkay(true)
+    }
+  },)
 
   return (
     <View style={styles.container}>
@@ -20,39 +29,39 @@ export default function NickName () {
       </View>
 
       <View style ={styles.iconList}>
-          <View style={[styles.iconContainer, !(button1) && {borderColor : '#FFD3D3'}]}>
+          <View style={[styles.iconContainer, (button1) && {borderColor : '#FFD3D3'}]}>
             <TouchableOpacity activeOpacity={0.6} style={styles.feelRound} onPress={() => {
               setButton1(!button1)
-              setButton2(true)
-              setButton3(true)
-              setButton4(true)
+              setButton2(false)
+              setButton3(false)
+              setButton4(false)
             }}>
               <Image source={require('../../assets/image/icon/profile_icon_green.png')} style={styles.signIcon}/>
             </TouchableOpacity>
           </View>
-          <View style={[styles.iconContainer, !(button2) && {borderColor : '#FFD3D3'}]}>
+          <View style={[styles.iconContainer, (button2) && {borderColor : '#FFD3D3'}]}>
             <TouchableOpacity activeOpacity={0.6} style={[styles.feelRound]}
             onPress={() => {
-              setButton1(true)
+              setButton1(false)
               setButton2(!button2)
-              setButton3(true)
-              setButton4(true)
+              setButton3(false)
+              setButton4(false)
             }}>
               <Image source={require('../../assets/image/icon/profile_icon_blue.png')} style={styles.signIcon}/>
             </TouchableOpacity>
           </View>
-          <View style={[styles.iconContainer, !(button3) && {borderColor : '#FFD3D3'}]}>
+          <View style={[styles.iconContainer, (button3) && {borderColor : '#FFD3D3'}]}>
             <TouchableOpacity activeOpacity={0.6} style={[styles.feelRound]}
             onPress={() => {
-              setButton1(true)
-              setButton2(true)
+              setButton1(false)
+              setButton2(false)
               setButton3(!button3)
-              setButton4(true)
+              setButton4(false)
             }}>
               <Image source={require('../../assets/image/icon/profile_icon_yellow.png')} style={styles.signIcon}/>
             </TouchableOpacity>
           </View>
-          <View style={[styles.iconContainer, !(button4) && {borderColor : '#FFD3D3'}]}>
+          <View style={[styles.iconContainer, (button4) && {borderColor : '#FFD3D3'}]}>
             <TouchableOpacity activeOpacity={0.6} style={[styles.feelRound]}
             onPress={() => {
               setButton1(true)
@@ -76,7 +85,7 @@ export default function NickName () {
         </View>
 
 
-      <TouchableOpacity style={styles.textContainer} onPress={() => navigation.navigate('TabNav')}>
+      <TouchableOpacity style={okay ? styles.textContainerDisabled : styles.textContainer} disabled={okay} onPress={() => navigation.navigate('TabNav')} >
         <Text style={styles.signText}>다음</Text>
       </TouchableOpacity>
     </View>
@@ -101,6 +110,12 @@ const styles = StyleSheet.create({
     fontSize : 20,
     color: '#555555',
     lineHeight : 32
+  },
+  textContainerDisabled:{
+    width : '100%',
+    marginTop : 12,
+    backgroundColor : '#F3F3F3', 
+    alignItems : 'center'
   },
   textContainer:{
     width : '100%',
