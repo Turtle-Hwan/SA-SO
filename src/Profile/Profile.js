@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View, StyleSheet,Image } from 'react-native';
 
 import ToggleSwitch from 'toggle-switch-react-native'
 
 export default function Profile() {
+  const[toggle, setToggle] = useState(false)
   return (
     <View style={styles.container}>
       <View style={styles.containerWidth}>
@@ -30,12 +31,12 @@ export default function Profile() {
           <View style={[styles.containerWidth, styles.listTextContainer]}>
             <Text style={styles.listText}>알림 설정</Text>
             <ToggleSwitch
-              isOn={false}
-              onColor="#007AFF"
+              isOn={toggle}
+              onColor="#0A84FF"
               offColor="#C4C4C4"
               // labelStyle={{ color: "black", fontWeight: "900" }}
               size="small"
-              onToggle={isOn => console.log("changed to : ", isOn)}
+              onToggle={() => {setToggle(!toggle)}}
             />
           </View>
         </View>

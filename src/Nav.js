@@ -1,21 +1,33 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// import React, { useState, useEffect} from 'react';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Home from './Home';
-import Todo from './Todo/Todo';
-import Profile from './Profile/Profile';
+// import Splash from './Splash/Splash';
 
-const Tab = createBottomTabNavigator();
 
-export default function Nav() {
-  return (
-    <NavigationContainer>
-      <Tab.Navigator screenOptions={{headerShown: false}}>
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Todo" component={Todo} />
-        <Tab.Screen name="Me" component={Profile} />
-      </Tab.Navigator>
-    </NavigationContainer>
-  );
-}
+// const Stack = createNativeStackNavigator();
+
+// export default function Nav() {
+
+//   const [isLoading, setIsLoading] = useState(true)
+
+
+//   useEffect(() => {
+//     setTimeout(() => {setIsLoading(false)}, 1000)
+//   }, []);
+
+  
+
+//   if(isLoading){
+//     return <Splash/>
+//   }
+
+//   return (
+//     <NavigationContainer>
+//       <Stack.Navigator screenOptions={{headerShown: false}}>
+//         <Stack.Screen name="TabNav" component={Home}/>
+//       </Stack.Navigator>
+//     </NavigationContainer>
+// );
+// }
+
