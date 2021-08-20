@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Main from './src/Main';
+import Nav from './src/Nav';
 
 function App() {
   return (
     <>
-      <Main/>
+      <Nav/>
     </>
 
   );

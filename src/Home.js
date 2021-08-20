@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function Main() {
+export default function Home() {
   return(
     <View style={styles.container}>
       <Text>김家네</Text>
