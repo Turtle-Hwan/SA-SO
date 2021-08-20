@@ -118,7 +118,7 @@ const MonthCalendar = () => {
             />
         </View>
         <View style={styles.toDoContainer}>
-                <Text>to doooooo</Text>
+               <Text>todo</Text>
         </View>
         </View>
     );

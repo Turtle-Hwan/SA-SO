@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet, StatusBar, Text} from 'react-native';
+import { View, StyleSheet, StatusBar, Image} from 'react-native';
 
 
 export default function Splash () {
@@ -7,7 +7,7 @@ export default function Splash () {
     <View style={styles.container}>
       <StatusBar hidden={true}/>
       <View style ={styles.logoContainer}>
-        <Text style={styles.logoName}>사소</Text>
+        <Image source={require('../../assets/image/splash_image.png')} style={styles.image}/>
       </View>
     </View>
   )
@@ -17,17 +17,18 @@ const styles = StyleSheet.create({
   container :{
     width : '100%',
     height : '100%',  
-    backgroundColor : '#4C6BFD',
+    backgroundColor : '#FFCBCB',
     justifyContent : 'center',
     alignItems : 'center'
   },
   logoContainer : {
     alignItems : 'center',
     justifyContent : 'center',
-    width : 70,
-    height : 70
+    width : 163,
+    height : 154
   },
-  logoName :{
-    fontSize : 30
+  image :{
+    width : '100%',
+    height : '100%',
   }
 })
