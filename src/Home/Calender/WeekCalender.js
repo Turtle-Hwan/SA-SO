@@ -4,10 +4,12 @@ import { View, StyleSheet,Text, TouchableOpacity, ScrollView } from 'react-nativ
 import CalendarStrip from 'react-native-calendar-strip';
 import HomeMission from './Misson/HomeMisson';
 import DayDiary from './DayDiary';
+import { navigate } from '@react-navigation/routers/lib/typescript/src/CommonActions';
+import { useNavigation } from '@react-navigation/native'
 
 export default function WeekCalender() {
   const [dateSelect, setDateSelect] = useState()
-
+  const navigation = useNavigation();
 
   return (
     <ScrollView style={styles.container}>
@@ -65,7 +67,7 @@ export default function WeekCalender() {
       <HomeMission props={dateSelect}/>
 
       <View style={styles.newChallenge}>
-        <TouchableOpacity activeOpacity={0.4} style={styles.newChallengeButton}>
+        <TouchableOpacity activeOpacity={0.4} style={styles.newChallengeButton} onPress={() => navigation.navigate('RandomTodo')}>
           <Text style={styles.newChallengeText}>새로운 도전! 저희가 추천해줄게요.</Text>
         </TouchableOpacity>
       </View>

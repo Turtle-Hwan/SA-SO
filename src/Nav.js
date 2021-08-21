@@ -6,6 +6,7 @@ import Splash from './Splash/Splash';
 import TabNav from './TabNav';
 import SignUp from './Login/SignUp';
 import NickName from './Login/NickName';
+import RandomTodo from './Todo/RandomTodo';
 
 
 const Stack = createNativeStackNavigator();
@@ -31,6 +32,7 @@ export default function Nav() {
         <Stack.Screen name = "SignUp" component={SignUp}/>
         <Stack.Screen name = "NickName" component={NickName}/>
         <Stack.Screen name="TabNav" component={TabNav}/>
+        <Stack.Screen name="RandomTodo" component={RandomTodo}/>
       </Stack.Navigator>
     </NavigationContainer>
 );
