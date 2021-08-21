@@ -64,9 +64,9 @@ export default function NickName () {
           <View style={[styles.iconContainer, (button4) && {borderColor : '#FFD3D3'}]}>
             <TouchableOpacity activeOpacity={0.6} style={[styles.feelRound]}
             onPress={() => {
-              setButton1(true)
-              setButton2(true)
-              setButton3(true)
+              setButton1(false)
+              setButton2(false)
+              setButton3(false)
               setButton4(!button4)
             }}>
               <Image source={require('../../assets/image/icon/profile_icon_red.png')} style={styles.signIcon}/>
