@@ -120,66 +120,68 @@ export default function RandomTodo() {
 
 	if (menu == 0) {
     return (
-      <View>
+      <View style={styles.bigConatiner}>
+				<View style={styles.container3}>
 				<View style={styles.buttonContainer1}>
 					<Text	style={styles.btnCategory}>유형별</Text>
 					<Image source={require('../../assets/image/icon/icon_reload.png')} />
 				</View>
         <View style={styles.buttonContainer2}>
-					<Button
-						style={styles.container}
-						title="전체"
-						color="pink"
+					<TouchableOpacity
+						style={styles.listButton}
 						onPress={() => {
 							setMenu(0);
 					}}
-					/>
-					<Button
-						style={styles.container}
-						title="활동적"
-						color="pink"
+					>
+					<Text style={styles.listButtonText}>전체</Text>
+					</TouchableOpacity>
+					<TouchableOpacity
+						style={styles.listButton}
 						onPress={() => {
 							setMenu(1);
 					}}
-					/>
-					<Button
-						style={styles.container}
-						title="일상적"
-						color="pink"
+					>
+					<Text style={styles.listButtonText}>활동적</Text>
+					</TouchableOpacity>
+					<TouchableOpacity
+						style={styles.listButton}
 						onPress={() => {
 							setMenu(2);
 					}}
-					/>
-					<Button
-						style={styles.container}
-						title="열정적"
-						color="pink"
+					>
+					<Text style={styles.listButtonText}>일상적</Text>
+					</TouchableOpacity>
+					<TouchableOpacity
+						style={styles.listButton}
 						onPress={() => {
 							setMenu(3);
 					}}
-					/>
+					>
+					<Text style={styles.listButtonText}>열정적</Text>
+					</TouchableOpacity>
         </View>
+				</View>
+				
 				<View>
 					{randomMenu(missionList, 14)}
 				</View>
 
 				<View style={styles.saveContainer}>
-					<Button 
-						style={styles.container}
-						title="보내기"
+				<TouchableOpacity 
+						style={styles.saveButton}
 						color=""
-						onPress={() => {
+						onPress={() => {}}
+					>
+					<Text style={styles.bottomButtomText}>저장하기</Text>
+					</TouchableOpacity>
 
-						}}
-					/>
-					<Button 
-						style={styles.container}
-						title="취소하기"
+					<TouchableOpacity 
+						style={styles.cancelButton}
 						color=""
-						onPress={() => {
-
-						}}
-					/>
+						onPress={() => {}}
+					>
+						<Text style={styles.bottomButtomText}>취소하기</Text>
+					</TouchableOpacity>
 
 				</View>
       </View>
@@ -187,198 +189,201 @@ export default function RandomTodo() {
 	}
 	else if (menu == 1) {
     return (
-      <View>
+      <View style={styles.bigConatiner}>
+				<View style={styles.container3}>
 				<View style={styles.buttonContainer1}>
 					<Text	style={styles.btnCategory}>유형별</Text>
 					<Image source={require('../../assets/image/icon/icon_reload.png')} />
 				</View>
         <View style={styles.buttonContainer2}>
-					<Button
-						style={styles.container}
-						title="전체"
-						color="pink"
+					<TouchableOpacity
+						style={styles.listButton}
 						onPress={() => {
 							setMenu(0);
 					}}
-					/>
-					<Button
-						style={styles.container}
-						title="활동적"
-						color="pink"
+					>
+					<Text style={styles.listButtonText}>전체</Text>
+					</TouchableOpacity>
+					<TouchableOpacity
+						style={styles.listButton}
 						onPress={() => {
 							setMenu(1);
 					}}
-					/>
-					<Button
-						style={styles.container}
-						title="일상적"
-						color="pink"
+					>
+					<Text style={styles.listButtonText}>활동적</Text>
+					</TouchableOpacity>
+					<TouchableOpacity
+						style={styles.listButton}
 						onPress={() => {
 							setMenu(2);
 					}}
-					/>
-					<Button
-						style={styles.container}
-						title="열정적"
-						color="pink"
+					>
+					<Text style={styles.listButtonText}>일상적</Text>
+					</TouchableOpacity>
+					<TouchableOpacity
+						style={styles.listButton}
 						onPress={() => {
 							setMenu(3);
 					}}
-					/>
+					>
+					<Text style={styles.listButtonText}>열정적</Text>
+					</TouchableOpacity>
         </View>
+				</View>
 				<View>
 					{randomMenu(activity, 4)}
 				</View>
 
 				<View style={styles.saveContainer}>
-				<Button 
-						style={styles.container}
-						title="보내기"
+				<TouchableOpacity 
+						style={styles.saveButton}
 						color=""
-						onPress={() => {
+						onPress={() => {}}
+					>
+					<Text style={styles.bottomButtomText}>저장하기</Text>
+					</TouchableOpacity>
 
-						}}
-					/>
-					<Button 
-						style={styles.container}
-						title="취소하기"
+					<TouchableOpacity 
+						style={styles.cancelButton}
 						color=""
-						onPress={() => {
-
-						}}
-					/>
+						onPress={() => {}}
+					>
+						<Text style={styles.bottomButtomText}>취소하기</Text>
+					</TouchableOpacity>
 				</View>
       </View>
     )
 	}
 	else if (menu == 2) {
     return (
-      <View>
+      <View style={styles.bigConatiner}>
+				<View style={styles.container3}>
 				<View style={styles.buttonContainer1}>
 					<Text	style={styles.btnCategory}>유형별</Text>
 					<Image source={require('../../assets/image/icon/icon_reload.png')} />
 				</View>
         <View style={styles.buttonContainer2}>
-					<Button
-						style={styles.container}
-						title="전체"
-						color="pink"
+					<TouchableOpacity
+						style={styles.listButton}
 						onPress={() => {
 							setMenu(0);
 					}}
-					/>
-					<Button
-						style={styles.container}
-						title="활동적"
-						color="pink"
+					>
+					<Text style={styles.listButtonText}>전체</Text>
+					</TouchableOpacity>
+					<TouchableOpacity
+						style={styles.listButton}
 						onPress={() => {
 							setMenu(1);
 					}}
-					/>
-					<Button
-						style={styles.container}
-						title="일상적"
-						color="pink"
+					>
+					<Text style={styles.listButtonText}>활동적</Text>
+					</TouchableOpacity>
+					<TouchableOpacity
+						style={styles.listButton}
 						onPress={() => {
 							setMenu(2);
 					}}
-					/>
-					<Button
-						style={styles.container}
-						title="열정적"
-						color="pink"
+					>
+					<Text style={styles.listButtonText}>일상적</Text>
+					</TouchableOpacity>
+					<TouchableOpacity
+						style={styles.listButton}
 						onPress={() => {
 							setMenu(3);
 					}}
-					/>
+					>
+					<Text style={styles.listButtonText}>열정적</Text>
+					</TouchableOpacity>
         </View>
+				</View>
 				<View>
 					{randomMenu(daily, 4)}
 				</View>
 
 				<View style={styles.saveContainer}>
-				<Button 
-						style={styles.container}
-						title="보내기"
+				<TouchableOpacity 
+						style={styles.saveButton}
 						color=""
-						onPress={() => {
+						onPress={() => {}}
+					>
+					<Text style={styles.bottomButtomText}>저장하기</Text>
+					</TouchableOpacity>
 
-						}}
-					/>
-					<Button 
-						style={styles.container}
-						title="취소하기"
+					<TouchableOpacity 
+						style={styles.cancelButton}
 						color=""
-						onPress={() => {
-
-						}}
-					/>
+						onPress={() => {}}
+					>
+						<Text style={styles.bottomButtomText}>취소하기</Text>
+					</TouchableOpacity>
 				</View>
       </View>
     )
 	}
 	else {
 		return (
-      <View>
+      <View style={styles.bigConatiner}>
+				<View style={styles.container3}>
 				<View style={styles.buttonContainer1}>
 					<Text	style={styles.btnCategory}>유형별</Text>
 					<Image source={require('../../assets/image/icon/icon_reload.png')} />
 				</View>
         <View style={styles.buttonContainer2}>
-					<Button
-						style={styles.container}
-						title="전체"
-						color="pink"
+					<TouchableOpacity
+						style={styles.listButton}
 						onPress={() => {
 							setMenu(0);
 					}}
-					/>
-					<Button
-						style={styles.container}
-						title="활동적"
-						color="pink"
+					>
+					<Text style={styles.listButtonText}>전체</Text>
+					</TouchableOpacity>
+					<TouchableOpacity
+						style={styles.listButton}
 						onPress={() => {
 							setMenu(1);
 					}}
-					/>
-					<Button
-						style={styles.container}
-						title="일상적"
-						color="pink"
+					>
+					<Text style={styles.listButtonText}>활동적</Text>
+					</TouchableOpacity>
+					<TouchableOpacity
+						style={styles.listButton}
 						onPress={() => {
 							setMenu(2);
 					}}
-					/>
-					<Button
-						style={styles.container}
-						title="열정적"
-						color="pink"
+					>
+					<Text style={styles.listButtonText}>일상적</Text>
+					</TouchableOpacity>
+					<TouchableOpacity
+						style={styles.listButton}
 						onPress={() => {
 							setMenu(3);
 					}}
-					/>
+					>
+					<Text style={styles.listButtonText}>열정적</Text>
+					</TouchableOpacity>
         </View>
+				</View>
 				<View>
 					{randomMenu(calmDown, 4)}
 				</View>
 
 				<View style={styles.saveContainer}>
-				<Button 
-						style={styles.container}
-						title="보내기"
+				<TouchableOpacity 
+						style={styles.saveButton}
 						color=""
-						onPress={() => {
+						onPress={() => {}}
+					>
+					<Text style={styles.bottomButtomText}>저장하기</Text>
+					</TouchableOpacity>
 
-						}}
-					/>
-					<Button 
-						style={styles.container}
-						title="취소하기"
+					<TouchableOpacity 
+						style={styles.cancelButton}
 						color=""
-						onPress={() => {
-
-						}}
-					/>
+						onPress={() => {}}
+					>
+						<Text style={styles.bottomButtomText}>취소하기</Text>
+					</TouchableOpacity>
 				</View>
       </View>
     )
@@ -386,13 +391,22 @@ export default function RandomTodo() {
 }
 
 const styles = StyleSheet.create({
+	bigConatiner:{
+		width: '100%',
+		height : '100%',
+		justifyContent:'space-between'
+	},
+	container3:{
+		
+	},
 	buttonContainer1:{
-		paddingTop:60,
-		padding:30,
-		paddingBottom:0,
+		paddingTop:30,
+		paddingBottom : 20,
+		paddingHorizontal: 30,
 		flexDirection : 'row',
 		justifyContent:'space-between',
 	},
+
 	btnCategory:{
 		
 	},
@@ -401,15 +415,50 @@ const styles = StyleSheet.create({
 	},
 
 	buttonContainer2:{
-		padding:30,
+		paddingHorizontal:30,
 		flexDirection : 'row',
 		justifyContent:'space-between',
 	},
+	listButton:{
+		backgroundColor: '#FFBDBD',
+		borderRadius : 8,
+		width : 80,
+		alignItems : 'center',
+		justifyContent : 'center'
+	},
+	listButtonText:{
+		fontFamily: 'NotoSansKR-Regular',
+		fontSize : 16,
+		lineHeight : 24,
+		paddingHorizontal : 10,
+		paddingVertical : 4,
+	},
 	saveContainer:{
-		paddingTop:100,
-		padding:30,
+		marginTop:100,
 		flexDirection : 'row',
 		justifyContent:'space-between',
+		backgroundColor : '#FFFFFF',
+		paddingHorizontal : 10,
+		paddingVertical : 8,
+	},
+	saveButton: {
+		width : '45%',
+		height : 50,
+		backgroundColor : '#FFBDBD',
+		borderRadius : 8,
+		alignItems : 'center',
+		justifyContent : 'center'
+	},
+	cancelButton : {
+		width : '45%',
+		height : 50,
+		borderRadius : 8,
+		alignItems : 'center',
+		justifyContent : 'center'
+	},
+	bottomButtomText:{
+		fontFamily: 'NotoSansKR-Regular',
+		fontSize : 16,
 	},
 	container:{
     backgroundColor: '#F3F3F3',

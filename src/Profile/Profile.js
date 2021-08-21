@@ -88,6 +88,8 @@ const styles = StyleSheet.create({
   titleConatiner:{
     height : 60,
     justifyContent : 'center',
+    alignItems : 'center',
+    flexDirection : 'row'
   },
   titleText:{
     fontSize: 22,
@@ -96,6 +98,10 @@ const styles = StyleSheet.create({
   myProfile:{
     flexDirection : 'row',
     height : 120,
+  },
+  leftArrowImage:{
+    height : 20,
+    width : 12,
   },
   iconContainer:{
     flex: 2,
