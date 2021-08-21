@@ -8,7 +8,7 @@ import { navigate } from '@react-navigation/routers/lib/typescript/src/CommonAct
 import { useNavigation } from '@react-navigation/native'
 
 export default function WeekCalender() {
-  const [dateSelect, setDateSelect] = useState()
+  const [dateSelect, setDateSelect] = useState(19)
   const navigation = useNavigation();
 
   return (
