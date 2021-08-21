@@ -6,7 +6,7 @@ export default function Detail(p) {
   return (
     <View style={styles.container}>
       <View style={styles.iconContainer}>
-        <Image source={require(`../../../assets/image/icon/profile_icon.png`)} style={styles.iconImage} />
+        <Image source={require(`../../../assets/image/icon/profile_icon_yellow.png`)} style={styles.iconImage} />
       </View>
 
       <View style={styles.listContainer}>
@@ -14,15 +14,6 @@ export default function Detail(p) {
           <Text style={styles.textTitle}>{p.Todo}</Text>
           <Text style={styles.textUserName}>{p.name}</Text>
         </View>
-        {/* <View style={styles.batteryContainer}>
-          <View style={[styles.battery,styles.batteryOne]}></View>
-          <View style={[styles.battery,styles.batteryTwo]}></View>
-          <View style={[styles.battery,styles.batteryThree]}></View>
-          <View style={[styles.battery,styles.batteryFour]}></View>
-          <View style={[styles.battery,styles.batteryFive]}></View>
-          <View style={[styles.battery,styles.batterySix]}></View>
-          <View style={[styles.battery,styles.batterySeven]}></View>
-        </View> */}
       </View>
     </View>
   )
