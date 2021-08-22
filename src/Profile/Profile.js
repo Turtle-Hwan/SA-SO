@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Text, View, StyleSheet,Image } from 'react-native';
+import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 
 import ToggleSwitch from 'toggle-switch-react-native'
 
@@ -8,25 +9,25 @@ export default function Profile() {
   return (
     <View style={styles.container}>
       <View style={styles.containerWidth}>
-
         <View style={styles.titleConatiner}>
           <Text style={styles.titleText}>마이페이지</Text>
         </View>
-
         <View style={styles.myProfile}>
           <View style={styles.iconContainer}>
             <Image source={require('../../assets/image/icon/profile_icon.png')} style={styles.iconImage} />
           </View>
-
           <View style={styles.profileTextContainer}>
             <View style={styles.profileNameContainer}>
               <Text style={styles.profileName}>김가네 라볶이</Text>
+              <SimpleLineIcons name="pencil" size={18} style={{paddingLeft: 12, color: '#8B8B8B'}}></SimpleLineIcons>
             </View>
           </View>
         </View>
       </View>
+      <View style={{width:'100%', height: 3, backgroundColor:'#F3F3F3'}}></View>
 
       <View style={styles.settingList}>
+        <Text style={styles.infoText}>정보</Text>
         <View style={styles.detailList}>
           <View style={[styles.containerWidth, styles.listTextContainer]}>
             <Text style={styles.listText}>알림 설정</Text>
@@ -34,7 +35,6 @@ export default function Profile() {
               isOn={toggle}
               onColor="#FFD3D3"
               offColor="#C4C4C4"
-              // labelStyle={{ color: "black", fontWeight: "900" }}
               size="small"
               onToggle={() => {setToggle(!toggle)}}
             />
@@ -61,7 +61,7 @@ export default function Profile() {
         <View style={styles.detailList}>
           <View style={[styles.containerWidth, styles.listTextContainer]}>
             <Text style={styles.listText}>버전정보</Text>
-            <Text style={styles.versionText}>0.1.0</Text>
+            <Text style={styles.versionText}>1.0 Ver</Text>
           </View>
         </View>
         <View style={styles.detailList}>
@@ -95,6 +95,10 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold',
   },
+  profileNameContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   myProfile:{
     flexDirection : 'row',
     height : 120,
@@ -117,19 +121,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingLeft : 20,
   },
-  profileNameContainer:{
-
-  },
   profileName:{
     fontSize: 20,
     fontWeight: 'bold',
-    paddingBottom: 20,
   },
   settingList:{
     marginTop: 18,
     width: '100%'
   },
-  listTextContainer:{
+  infoText: {
+    fontSize: 19,
+    fontFamily: 'Noto Sans KR',
+    paddingLeft: 18,
+    paddingTop: 28,
+    paddingBottom: 11,
+  },
+  listTextContainer: {
+    paddingVertical: 14,
     flexDirection : 'row',
     justifyContent : 'space-between',
     alignItems : 'center',
@@ -140,16 +148,17 @@ const styles = StyleSheet.create({
     alignItems : 'center',
   },
   listText:{
+    fontFamily: 'Noto Sans KR',
     fontSize: 18,
-    fontWeight: 'bold',
-    paddingVertical: 11,
+    color: '#555555'
   },
   iconArrow:{
     width : 7,
     height: 10,
   },
-  versionText:{
-    fontSize : 14,
-    fontWeight: 'bold'
+  versionText: {
+    fontFamily: 'Noto Sans KR',
+    fontSize: 16,
+    color: '#555555'
   }
 })
