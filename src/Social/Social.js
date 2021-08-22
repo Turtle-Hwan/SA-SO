@@ -14,12 +14,12 @@ export default function Todo() {
         <Text style={styles.dayText}>8월 21일</Text>
       </View>
       <ScrollView>
-        <Detail name="자연적인새 93445" Todo="아침 5분 스트레칭" />
-        <Detail name="자연적인곰 94745" Todo="강아지 산책시키기"/>
-        <Detail name="자유로운펭귄 345436" Todo="매일 3km 런닝"/>
-        <Detail name="깨끗한물고기 35521" Todo="매일 물 2잔 마시기"/>
-        <Detail name="자유로운펭귄 313086" Todo="먹고나서 바로 설거지하기"/>
-        <Detail name="자연적인새 9531" Todo="주 1회 등산하기"/>
+        <Detail imgPath={require(`../../assets/image/icon/profile_icon_yellow.png`)} name="자연적인새 93445" todo="아침 5분 스트레칭" />
+        <Detail imgPath={require(`../../assets/image/icon/profile_icon_blue.png`)} name="자연적인곰 94745" todo="강아지 산책시키기"/>
+        <Detail imgPath={require(`../../assets/image/icon/profile_icon_red.png`)} name="자유로운펭귄 345436" todo="매일 3km 런닝"/>
+        <Detail imgPath={require(`../../assets/image/icon/profile_icon_green.png`)} name="깨끗한물고기 35521" todo="매일 물 2잔 마시기"/>
+        <Detail imgPath={require(`../../assets/image/icon/profile_icon_yellow.png`)} name="자유로운펭귄 313086" todo="먹고나서 바로 설거지하기"/>
+        <Detail imgPath={require(`../../assets/image/icon/profile_icon_red.png`)} name="자연적인새 9531" todo="주 1회 등산하기"/>
         <View style={styles.dummyView}></View>
       </ScrollView>
     </View>
